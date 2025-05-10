@@ -2,6 +2,7 @@
 
 | 번호 | 제목 | 난이도 | 문제링크 | 코드 |
 |------|------|--------|-----------|------|
+| 1003 | 피보나치 함수 | Silver 3 | [문제](https://www.acmicpc.net/problem/1003) | [코드](./Silver/1003.cpp) |
 | 1018 | 체스판 다시 칠하기 | Silver 4 | [문제](https://www.acmicpc.net/problem/1018) | [코드](./Silver/1018.cpp) |
 | 1026 | 보물 | Silver 4 | [문제](https://www.acmicpc.net/problem/1026) | [코드](./Silver/1026.cpp) |
 | 1085 | 직사각형에서 탈출 | Bronze 3 | [문제](https://www.acmicpc.net/problem/1085) | [코드](./Bronze/1085.cpp) |

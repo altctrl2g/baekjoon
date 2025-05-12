@@ -2,4 +2,4 @@
 
 | 번호 | 제목 | 난이도 | 문제링크 | 코드 |
 |------|------|--------|-----------|------|
-| 1966 | 프린터 큐 | Silver 3 | [문제](https://www.acmicpc.net/problem/1966) | [코드](./Silver/1966.cpp) |
+| 11724 | 연결 요소의 개수 | Silver 2 | [문제](https://www.acmicpc.net/problem/11724) | [코드](./Silver/11724.cpp) |

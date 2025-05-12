@@ -23,11 +23,36 @@ int main() {
 
         int count = 0;
 
-        for (int i=0; i<n; i++) {
+        while (!priority.empty()) {
+
+            int cur = priority.front().first;
             
-            int temp = 
+            queue<pair<int, int>> temp = priority;
+
+            bool isFirst = true;
+            while (!temp.empty()) {
+                if (temp.front().first > cur) {
+                    isFirst = false;
+                }
+                temp.pop();
+            }
+
+            if (isFirst) { 
+                count++;
+                if (priority.front().second == m) {
+                    break;
+                }
+                priority.pop();
+            }
+            else {
+                    priority.push(priority.front());
+                    priority.pop();
+                }
+
 
         }
+
+        cout << count << '\n';
 
     }
 

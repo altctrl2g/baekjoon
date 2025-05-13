@@ -91,15 +91,25 @@ def update_main_readme():
 
 # 자동 Git 커밋 및 푸시
 def git_commit_push(entries):
-    subprocess.run(["git", "add", "."])
-    if len(entries) == 1:
-        pid, title, *_ = entries[0]
-        msg = f"Add {pid} {title}"
-    else:
-        msg = f"Add {len(entries)} new problems"
-    subprocess.run(["git", "commit", "-m", msg])
-    subprocess.run(["git", "push"])
-    print(f"[✔] Git 커밋 & 푸시 완료: {msg}")
+    try:
+        subprocess.run(["git", "add", "."], check=True)
+        result = subprocess.run(["git", "status", "--porcelain"], capture_output=True, text=True)
+        if not result.stdout.strip():
+            print("[*] 커밋할 변경사항 없음. 스킵.")
+            return
+
+        if len(entries) == 1:
+            pid, title, *_ = entries[0]
+            msg = f"Add {pid} {title}"
+        else:
+            msg = f"Add {len(entries)} new problems"
+
+        subprocess.run(["git", "commit", "-m", msg], check=True)
+        subprocess.run(["git", "push"], check=True)
+        print(f"[✔] Git 커밋 & 푸시 완료: {msg}")
+
+    except subprocess.CalledProcessError as e:
+        print(f"[!] Git 명령 실패: {e}")
 
 if __name__ == '__main__':
     entries = organize_cpp_files()
